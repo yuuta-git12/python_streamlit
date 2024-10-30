@@ -19,3 +19,6 @@ if st.button("サイコロを振る"):
 df = pd.DataFrame(st.session_state.dices, columns=["1つ目のサイコロ", "2つ目のサイコロ", "合計"])
 st.dataframe(df)
 st.write("試行回数", len(st.session_state.dices))
+
+if st.button("結果を表示"):
+    st.bar_chart(df["合計"].value_counts())
